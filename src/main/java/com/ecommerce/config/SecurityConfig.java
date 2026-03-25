@@ -45,7 +45,7 @@ public class SecurityConfig {
             allowedOrigins.add(frontendUrl);
         }
         // Always allow local frontend for development
-        allowedOrigins.add("http://localhost:5173");
+        allowedOrigins.add("http://ecommerce-backend-production-d07d.up.railway.app");
         
         configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
