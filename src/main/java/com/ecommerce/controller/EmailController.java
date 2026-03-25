@@ -9,7 +9,7 @@ import com.ecommerce.service.Emailservice;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/email")
+@RequestMapping("/email")
 public class EmailController {
 
     @Autowired
