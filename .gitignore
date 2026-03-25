@@ -1,0 +1,11 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/resources/archetype-resources/google-services.json
+.vscode/
+.idea/
+*.iws
+*.iml
+*.ipr
+.mvn/wrapper/
+.DS_Store
+*.log
