@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.ecommerce.dto.OrderRequest;
 import com.ecommerce.service.OrderService;
+
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -17,4 +18,4 @@ public class OrderController {
         orderService.placeOrder(request);
         return ResponseEntity.ok("Order saved successfully");
     }
-} 
+}

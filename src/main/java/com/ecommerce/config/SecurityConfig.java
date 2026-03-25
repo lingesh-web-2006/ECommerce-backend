@@ -14,6 +14,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -38,22 +39,28 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        String frontendUrl = System.getenv("FRONTEND_URL");
-        
+
         List<String> allowedOrigins = new ArrayList<>();
+
+        // Read dynamic frontend URL from environment (set in Railway)
+        String frontendUrl = System.getenv("FRONTEND_URL");
         if (frontendUrl != null && !frontendUrl.isEmpty()) {
             allowedOrigins.add(frontendUrl);
         }
-        // Always allow local frontend for development
+
+        // Production frontend
         allowedOrigins.add("http://ecowebapp.netlify.app");
         allowedOrigins.add("https://ecowebapp.netlify.app");
+
+        // Local development
         allowedOrigins.add("http://localhost:5173");
         allowedOrigins.add("http://127.0.0.1:5173");
-        
+
         configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
