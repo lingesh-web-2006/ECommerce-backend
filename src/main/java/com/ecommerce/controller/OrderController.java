@@ -7,7 +7,7 @@ import com.ecommerce.dto.OrderRequest;
 import com.ecommerce.service.OrderService;
 @RestController
 @RequestMapping("/order")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://ecowebapp.netlify.app")
 public class OrderController {
 
     @Autowired
