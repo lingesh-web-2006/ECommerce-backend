@@ -43,7 +43,7 @@ public class SecurityConfig {
         // Add your frontend URLs here
         configuration.setAllowedOrigins(List.of(
             "https://ecowebapp.netlify.app", // production frontend
-                     // local dev
+             "https://localhost:5173"
         ));
 
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
