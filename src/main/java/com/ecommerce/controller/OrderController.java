@@ -7,7 +7,6 @@ import com.ecommerce.dto.OrderRequest;
 import com.ecommerce.service.OrderService;
 @RestController
 @RequestMapping("/order")
-@CrossOrigin(origins = "*")
 public class OrderController {
 
     @Autowired

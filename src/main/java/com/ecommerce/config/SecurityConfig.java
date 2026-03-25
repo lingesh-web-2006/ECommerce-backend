@@ -45,7 +45,10 @@ public class SecurityConfig {
             allowedOrigins.add(frontendUrl);
         }
         // Always allow local frontend for development
+        allowedOrigins.add("http://ecowebapp.netlify.app");
+        allowedOrigins.add("https://ecowebapp.netlify.app");
         allowedOrigins.add("http://localhost:5173");
+        allowedOrigins.add("http://127.0.0.1:5173");
         
         configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
